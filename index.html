@@ -220,10 +220,13 @@ const ArticleCard = ({ article }) => {
 
       {/* Left cluster: icon + cached badge */}
       <div className="flex items-center gap-3">
-        <BookOpen size={28} className="text-blue-600 shrink-0" />
+        {/* Square container so height matches buttons */}
+        <div className="flex items-center justify-center w-10 h-10">
+          <BookOpen className="text-blue-600 w-6 h-6" />
+        </div>
 
         {isCached && (
-          <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded whitespace-nowrap">
+          <span className="inline-flex items-center h-8 text-xs bg-green-100 text-green-700 px-2 rounded whitespace-nowrap">
             Cached
           </span>
         )}
@@ -232,20 +235,20 @@ const ArticleCard = ({ article }) => {
       {/* Right cluster: Saved + bigger Refresh */}
       <div className="flex items-center gap-3">
 
-        {/* SAVED BUTTON — always shows text & count */}
+        {/* SAVED BUTTON — fixed height, centered content */}
         <button
           onClick={() => setActiveView(activeView === 'feed' ? 'saved' : 'feed')}
-          className="flex items-center gap-2 px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
+          className="flex items-center justify-center gap-2 h-10 px-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
         >
           <Bookmark size={18} />
           <span>Saved ({savedArticles.length})</span>
         </button>
 
-        {/* REFRESH BUTTON — wider */}
+        {/* REFRESH BUTTON — same height */}
         <button
           onClick={() => fetchArticles(selectedTopic, true)}
           disabled={loading}
-          className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50"
+          className="flex items-center justify-center gap-2 h-10 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50"
         >
           <RefreshCw
             size={18}
@@ -265,7 +268,7 @@ const ArticleCard = ({ article }) => {
 
   </div>
 </header>
-
+          
           <main className="max-w-4xl mx-auto px-4 py-8">
             {activeView === 'feed' ? (
               <>
