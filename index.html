@@ -30,11 +30,10 @@
   <script type="text/babel">
     const { useState, useEffect } = React;
 
-    // --- Backend API base URL ---
-    const API_URL = 'https://anthodyne-backend.onrender.com/api/articles';
+    const BACKEND_BASE = 'https://anthodyne-backend.onrender.com';
 
-    // --- Shakespeare sonnet endpoint (backend proxy to MIT) ---
-    const SONNET_URL = 'https://anthodyne-backend.onrender.com/api/sonnet';
+    const API_URL = `${BACKEND_BASE}/api/articles`;
+    const SONNET_URL = `${BACKEND_BASE}/api/sonnet`;
 
     const fetchRandomSonnet = async () => {
       const resp = await fetch(SONNET_URL);
