@@ -1,5 +1,5 @@
 const APP_CONFIG = {
-  appName: "Anthodyne",
+  appName: "Crimson Hexagon 1.0",
   backendBase: "https://anthodyne-backend.onrender.com",
   defaultTopic: "All",
   // add more instance inputs here as you find them
