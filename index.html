@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anthodyne 1.0</title>
+  <title>Loading…</title>
 
   <link rel="manifest" href="/Anthodyne/manifest.json">
   <meta name="theme-color" content="#2563eb">
@@ -23,6 +23,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- App configuration (MUST come before the Babel script below) -->
   <script src="config.js"></script>
+  <script>document.title = APP_CONFIG.appName;</script>
 </head>
 
 <body class="bg-gray-50">
